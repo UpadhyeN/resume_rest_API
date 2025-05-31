@@ -16,4 +16,12 @@ cronjob to run something periodically in future
 
 `kubectl port-forward service/nginx-service 8080:80` Port forwarding
 
-``
+`k expose deployment/nginx-app-cka --name=app-service-cka --port=80 --target-port=80 --type=NodePort ` node port service.
+
+`kubectl run test-nslookup --rm -i --tty --image=busybox:1.28 --restart=Never -- /bin/sh` run busy box for commands
+
+StorageClass is like a template or blueprint that tells Kubernetes how to create (provision) PersistentVolumes (PVs) — what kind of storage, parameters, performance, etc.
+
+PersistentVolume (PV) is the actual storage resource created based on that StorageClass (or statically created).
+
+PersistentVolumeClaim (PVC) is your request or claim to use a PV that matches your storage needs (size, access mode, StorageClass).
